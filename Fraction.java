@@ -69,7 +69,7 @@ public class Fraction {
         }
     }
 
-    public void GCF(int a, int b){
+    public static int GCF(int a, int b){
 		int difference = Integer.MAX_VALUE;
 		while(difference>0){
 			if(a>b){
@@ -81,5 +81,7 @@ public class Fraction {
 			else if(a==b) difference=0;
 			difference = Math.abs(a-b);	
 			}
+		return a;
 		}
+		
 }
