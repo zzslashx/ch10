@@ -69,19 +69,17 @@ public class Fraction {
         }
     }
 
-    public static int GCF(int a, int b){
-		int difference = Integer.MAX_VALUE;
-		while(difference>0){
-			if(a>b){
-				a = a-b;
-				}
-			else if(b>a){
-				b=b-a;
-				}
-			else if(a==b) difference=0;
-			difference = Math.abs(a-b);	
-			}
-		return a;
-		}
-		
+    public static int GCF(int a, int b) {
+        int difference = Integer.MAX_VALUE;
+        while (difference > 0) {
+            if (a > b) {
+                a = a - b;
+            } else if (b > a) {
+                b = b - a;
+            } else if (a == b)
+                difference = 0;
+            difference = Math.abs(a - b);
+        }
+        return a;
+    }
 }
