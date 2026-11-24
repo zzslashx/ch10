@@ -5,7 +5,7 @@ public class FractionDriver {
 
         System.out.println(f1);
         System.out.println(f2);
-
+//a
         System.out.println(Fraction.GCF(12, 18));
         System.out.println(Fraction.GCF(7, 5));
 
