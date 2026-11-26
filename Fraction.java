@@ -33,11 +33,29 @@ public class Fraction {
         numerator = f.numerator;
         denominator = f.denominator;
     }
+   
     public static Fraction mult(Fraction a, Fraction b) {
-        return new Fraction(a.numerator * b.numerator, a.denominator * b.denominator);
+        Fraction result = new Fraction(a.numerator * b.numerator, a.denominator * b.denominator);
+        result.reduce();
+        return result;
     }
+
     public static Fraction vivi(Fraction a, Fraction b) {
-        return new Fraction(a.numerator * b.denominator, a.denominator * b.numerator);
+        Fraction result = new Fraction(a.numerator * b.denominator, a.denominator * b.numerator);
+        result.reduce();
+        return result;
+    }
+
+    public static Fraction add(Fraction a, Fraction b) {
+        Fraction result = new Fraction(a.numerator * b.denominator + b.numerator * a.denominator, a.denominator * b.denominator);
+        result.reduce();
+        return result;
+    }
+
+    public static Fraction subtract(Fraction a, Fraction b) {
+        Fraction result = new Fraction(a.numerator * b.denominator - b.numerator * a.denominator, a.denominator * b.denominator);
+        result.reduce();
+        return result;
     }
 
     // Behaviour Methods(accessor, mutator, helper)
@@ -67,6 +85,11 @@ public class Fraction {
             denominator = 1;
             System.out.println("Error: Denominator can't be zero");
         }
+    }
+    public void reduce() {
+        int g = GCF(numerator, denominator);
+        numerator = numerator / g;
+        denominator = denominator / g;
     }
 
     public static int GCF(int a, int b) {
